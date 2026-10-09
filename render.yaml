@@ -1,0 +1,11 @@
+# Render Blueprint: one free web service running the world server from server/Dockerfile.
+services:
+  - type: web
+    name: the-shattered-reach
+    runtime: docker
+    plan: free
+    region: ohio
+    rootDir: server
+    dockerfilePath: ./server/Dockerfile
+    dockerContext: ./server
+    autoDeployTrigger: commit

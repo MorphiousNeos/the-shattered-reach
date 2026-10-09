@@ -8,10 +8,21 @@ This repository holds the browser build only. The full PC version (better graphi
 
 ## Playing together
 
-Browsers can't host a world. To play with friends, someone runs a world server from the PC version (`World server (browser + PC).bat`), and everyone joins its address.
+Click **Join the public world** on the title screen. Everyone who does shares one world, run by a free cloud server, with no one needing to host from their own computer.
 
-- The browser version is served over HTTPS, so it can only join secure `wss://` addresses, for example a Cloudflare tunnel address like `https://something.trycloudflare.com`.
-- PC players can join the same address.
+- The free server sleeps when nobody is playing. The first player in waits about a minute while it wakes; the game shows a countdown.
+- The world starts fresh whenever the server restarts or sleeps (free hosting has no permanent disk).
+- Up to 8 players at once.
+
+You can still host privately from the PC version, or run your own copy of the server: see [`server/`](server/README.md).
+
+## Repository layout
+
+| Path | What it is |
+| --- | --- |
+| `index.*` | The browser game (Godot 4.3 web export) served by GitHub Pages |
+| `server/` | The world server (`server.pck` + `Dockerfile`) |
+| `render.yaml` | Render Blueprint that deploys `server/` as a free web service |
 
 ## Controls
 
