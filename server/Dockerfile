@@ -5,7 +5,7 @@ FROM debian:bookworm-slim
 
 ARG GODOT_VERSION=4.3-stable
 RUN apt-get update \
- && apt-get install -y --no-install-recommends ca-certificates wget unzip \
+ && apt-get install -y --no-install-recommends ca-certificates wget unzip nginx-light \
  && wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}/Godot_v${GODOT_VERSION}_linux.x86_64.zip" -O /tmp/godot.zip \
  && unzip -q /tmp/godot.zip -d /opt \
  && mv "/opt/Godot_v${GODOT_VERSION}_linux.x86_64" /opt/godot \
@@ -17,9 +17,10 @@ RUN useradd --create-home reach
 USER reach
 WORKDIR /home/reach
 
-COPY --chown=reach server.pck /home/reach/server.pck
+COPY --chown=reach server.pck nginx.conf.template start.sh /home/reach/
 
-# Cloud hosts set $PORT; the server reads it and switches to WebSocket mode automatically.
+# nginx listens on $PORT (set by the host) and answers plain web requests and health checks;
+# WebSocket connections go through to the Godot world server on an internal port.
 ENV PORT=10000
 EXPOSE 10000
-CMD ["/opt/godot", "--headless", "--main-pack", "/home/reach/server.pck", "--", "--server"]
+CMD ["/bin/sh", "/home/reach/start.sh"]

@@ -9,3 +9,4 @@ services:
     dockerfilePath: ./server/Dockerfile
     dockerContext: ./server
     autoDeployTrigger: commit
+    healthCheckPath: /healthz
