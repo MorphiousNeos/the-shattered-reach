@@ -3,7 +3,7 @@
 # WebSocket connections to Godot on an internal port.
 worker_processes 1;
 pid /tmp/nginx.pid;
-error_log /dev/stderr warn;
+error_log stderr warn;
 events { worker_connections 256; }
 http {
     access_log off;

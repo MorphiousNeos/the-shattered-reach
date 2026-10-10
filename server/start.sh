@@ -11,4 +11,4 @@ GODOT_PID=$!
 # exec keeps this script's process ID, so $$ is nginx's ID once it starts
 NGINX_PID=$$
 ( while kill -0 "$GODOT_PID" 2>/dev/null; do sleep 5; done; echo "World server exited, stopping container"; kill -TERM "$NGINX_PID" ) &
-exec nginx -c /tmp/nginx.conf -g 'daemon off;'
+exec nginx -e stderr -c /tmp/nginx.conf -g 'daemon off;'

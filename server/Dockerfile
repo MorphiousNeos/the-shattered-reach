@@ -5,7 +5,7 @@ FROM debian:bookworm-slim
 
 ARG GODOT_VERSION=4.3-stable
 RUN apt-get update \
- && apt-get install -y --no-install-recommends ca-certificates wget unzip nginx-light \
+ && apt-get install -y --no-install-recommends ca-certificates wget unzip nginx \
  && wget -q "https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}/Godot_v${GODOT_VERSION}_linux.x86_64.zip" -O /tmp/godot.zip \
  && unzip -q /tmp/godot.zip -d /opt \
  && mv "/opt/Godot_v${GODOT_VERSION}_linux.x86_64" /opt/godot \
