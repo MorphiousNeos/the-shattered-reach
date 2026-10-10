@@ -26,6 +26,8 @@ You can still host privately from the PC version, or run your own copy of the se
 
 ## Controls
 
-WASD move · Shift sprint · Space jump · Q dodge · Left/Right mouse attack · E talk · Enter chat · Esc menu · F11 fullscreen
+WASD move · Shift sprint · Space jump · Q dodge · Left/Right mouse attack · E talk · J journal · Mouse wheel zoom · Enter chat · Esc menu · F11 fullscreen
+
+**Graphics:** the browser starts on the Medium preset. Esc → Graphics has Low for weaker laptops and a 3D resolution slider if it stutters.
 
 Best in Chrome or Edge on a desktop or laptop. The first load downloads about 60 MB.
