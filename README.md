@@ -30,4 +30,6 @@ WASD move · Shift sprint · Space jump · Q dodge · Left/Right mouse attack ·
 
 **Graphics:** the browser starts on the Medium preset. Esc → Graphics has Low for weaker laptops and a 3D resolution slider if it stutters.
 
+**0.7.2:** Emberfall rebuilt with seven distinct houses, new ground and trees, and far fewer draw calls in the browser.
+
 Best in Chrome or Edge on a desktop or laptop. The first load downloads about 60 MB.
